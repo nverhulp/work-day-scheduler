@@ -14,7 +14,7 @@ Create a simple calendar application that allows a user to save events for each 
 
 ## Deployed Page
 
-
+<img src="./assets/image/deployed-page.png>
 
 ## Acceptance Criteria
 
