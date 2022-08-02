@@ -1,50 +1,44 @@
 // Present Day and Time
-var todayDate = moment().formant('dddd, MMM do YYYY');
-$("#currentDay").html(todayDate);
+$("#currentDay").text(moment().format('dddd MMMM Do YYYY'));
 
-// Save Button
-$(document).ready(functio()) {
-    $(".saveBtn").on("click", function()) {
-        var text = $(this).siblings(".description").val();
-        var time = $(this).parent().attr("id");
-        localStorage.setItem(time, text);
-    }
+// Timeblock Color Coding
+function timeBlockColor() {
+    var hour = moment().hours();
 
-    function timeTracker() {
-        var timeNow = moment().hour();
+    $(".time-block").each(function() {
+        var currHour = parseInt($(this).attr("id"));
 
-        $(".time-blcok").each(function()) {
-            var blockTime = parseInt($(this).attr("id").split("hour")[1]);
-
-            if (blockTime < timeNow) {
-                $(this).removeClass("future");
-                $(this).removeClass("present");
-                $(this).addClass("past");
-            }
-
-            else if (blockTime === timeNow) {
-                $(this).removeClass("past");
-                $(this).removeClass("future");
-                $(this).addClass("present");
-            }
-
-            else {
-                $(this).removeClass("present");
-                $(this).removeClass("past");
-                $(this).addClass("future");
-            }
+        if (currHour > hour) {
+            $(this).addClass("future");
+        } else if (currHour === hour) {
+            $(this).addClass("present");
+        } else {
+            $(this).addClass("past");
         }
-    }
+    })
+};
 
-    // Local Storage
-    $("#hour8 .description").val(localStorage.getItem("hour8"));
-    $("#hour9 .description").val(localStorage.getItem("hour9"));
-    $("#hour10 .description").val(localStorage.getItem("hour10"));
-    $("#hour11 .description").val(localStorage.getItem("hour11"));
-    $("#hour12 .description").val(localStorage.getItem("hour12"));
-    $("#hour13 .description").val(localStorage.getItem("hour13"));
-    $("#hour14 .description").val(localStorage.getItem("hour14"));
-    $("#hour15 .description").val(localStorage.getItem("hour15"));
-    $("#hour16 .description").val(localStorage.getItem("hour16"));
-    $("#hour17 .description").val(localStorage.getItem("hour17"));
+// Save Button and Function
+var saveBtn = $(".saveBtn");
+
+saveBtn.on("click", function() {
+    var time = $(this).siblings(".hour").text();
+    var plan  = $(this).siblings(".plan").val();
+
+    localStorage.setItem(time, plan);
+});
+
+function usePlanner() {
+    $(".hour").each(function() {
+        var currHour = $(this).text();
+        var currPlan = localStorage.getItem(currHour);
+
+        if(currPlan !== null) {
+            $(this).siblings(".plan").val(currPlan);
+        }
+    });
 }
+
+// Functions
+timeBlockColor();
+usePlanner();
