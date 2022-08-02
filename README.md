@@ -41,3 +41,5 @@ THEN the saved events persist
 ## URL of Deployed Application
 
 ## Credits
+
+1. Starter code from [Github](https://github.com/coding-boot-camp/super-disco)
