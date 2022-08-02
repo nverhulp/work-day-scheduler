@@ -14,6 +14,8 @@ Create a simple calendar application that allows a user to save events for each 
 
 ## Deployed Page
 
+<img src="./assets/videos/Work Day Scheduler.mp4>
+
 ## Acceptance Criteria
 
 GIVEN I am using a daily planner to create a schedule
