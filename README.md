@@ -14,7 +14,7 @@ Create a simple calendar application that allows a user to save events for each 
 
 ## Deployed Page
 
-<img src="./assets/videos/Work Day Scheduler.mp4>
+
 
 ## Acceptance Criteria
 
@@ -41,6 +41,8 @@ THEN the saved events persist
 5. Current day displayed at the top
 
 ## URL of Deployed Application
+
+[Deployed Gitpage](https://nverhulp.github.io/work-day-scheduler/)
 
 ## Credits
 
