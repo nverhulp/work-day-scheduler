@@ -32,6 +32,12 @@ THEN the saved events persist
 
 ## Comments
 
+1. Created schedule app from 8 AM to 5 PM
+2. User has ability to write text in each timeblock
+3. When the save button is clicked, the text will remain when page is refreshed
+4. Color of boxes indicates whether the time is present, past or future
+5. Current day displayed at the top
+
 ## URL of Deployed Application
 
 ## Credits
